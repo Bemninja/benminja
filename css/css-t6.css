@@ -1,0 +1,253 @@
+/* @font-face {
+  font-family: amarante;
+  src: url(../font/Amarante-Regular.ttf);
+}
+
+body,
+h1 {
+  font-family: amarante;
+} */
+
+@font-face {
+  font-family: uni_acc;
+  src: url(../font/Uni_acc.ttf);
+  color: white;
+}
+
+.baggrund1 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/rearing-pukah.webp);
+  z-index: -1;
+}
+
+html,
+body {
+  height: 100%; /* Sørg for, at både body og html fylder hele skærmen */
+  margin: 0; /* Fjern margin på body */
+  padding: 0; /* Fjern padding på body */
+  overflow-x: hidden; /* Undgå horisontal scroll, hvis noget rager udenfor */
+}
+
+body,
+main,
+header,
+h1 {
+  font-family: uni_acc;
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+}
+
+#header {
+  top: 20px;
+  position: fixed;
+  z-index: 10;
+  transition: background 0.4s ease;
+  height: 5vh;
+  width: 100%;
+  display: flex; /* Gør headeren til en flex container */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  justify-content: space-between; /* Sørger for, at logo og menu placeres i hver sin ende */
+  padding: 0 1rem;
+}
+
+#header > nav {
+  display: flex;
+  align-items: center;
+}
+
+header.scrolled {
+  background-color: black;
+}
+
+.logo {
+  width: 100px; /* Juster størrelsen på logoet */
+  height: auto; /* Bevarer billedets proportioner */
+  filter: brightness(0) invert(1); /* Skifter farverne til hvid */
+  margin: 1em;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header_nav ul {
+  display: flex; /* Arrangerer menupunkterne vandret */
+  list-style: none; /* Fjerner punkttegn */
+  margin: 0;
+  padding: 0;
+}
+
+.header_nav ul li {
+  text-decoration: none; /* Fjerner understregning */
+  color: white; /* Hvid tekst */
+  font-size: clamp(1rem, 2vw, 3rem) !important;
+  margin: 0 1rem; /* Laver mellemrum mellem menupunkterne */
+  margin-left: 5vw;
+}
+
+.header_nav ul li a {
+  text-decoration: none; /* Fjerner understregning */
+  color: white; /* Hvid tekst */
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 80px; /* Mindre logo på små skærme */
+    padding: 1em;
+  }
+}
+
+.headline h1 {
+  text-align: left;
+  margin: 0;
+  position: absolute;
+  top: 14vh;
+  left: 5vw;
+  font-size: clamp(2rem, 20vw, 10rem);
+  width: auto; /* Sørg for, at teksten ikke tager unødvendig bredde */
+  color: white;
+}
+
+.lottie-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivt grid med min 200px celler */
+  gap: 50px; /* Afstand mellem celler */
+  justify-items: center; /* Centrerer indhold i celler */
+  align-items: center; /* Centrerer vertikalt */
+  padding: 20px; /* Indrykning omkring grid */
+  margin: 20px auto; /* Centrerer hele sektionen */
+  max-width: 1200px; /* Begrænser bredden af sektionen */
+  position: absolute; /* Absolut placering */
+  bottom: 10%; /* Placerer sektionen 10% over bunden */
+  left: 50%; /* Centrer sektionen horisontalt */
+  transform: translateX(-50%); /* Justerer placeringen for at centrere sektionen */
+  top: 30vh;
+}
+
+.lottie-tema {
+  display: flex; /* Brug flex til at centrere animationerne */
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(23, 79, 125, 0.1)); /* Semi-gennemsigtig gradient */
+  border-radius: 10px; /* Runde hjørner */
+  padding: 10px; /* Plads inden for cellerne */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Blød skygge */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Hover animation */
+}
+
+.lottie-tema:hover {
+  border-radius: 5px;
+  background-color: transparent !important;
+  box-shadow: none;
+  z-index: 1;
+  transform: scale(1.1); /* Forstør med 10% */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(23, 79, 125, 0.3));
+}
+
+/* Container omkring Lottie-animationen */
+.lottie-tema {
+  display: flex; /* Brug flexbox for at centrere indholdet */
+  justify-content: center; /* Centrerer indholdet horisontalt */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  width: 220px;
+  height: 150px;
+  border: 2px solid transparent; /* Gennemsigtig ramme som standard */
+  transition: transform 0.3s ease, border 0.3s ease-in-out; /* Glidende overgang */
+  overflow: hidden; /* Skjuler eventuelle elementer, der stikker ud */
+}
+
+/* Når musen svæver over containeren, vokser rammen med 10% */
+.lottie-tema:hover {
+  transform: scale(1.1); /* Vokser rammen med 10% */
+  transform-origin: center; /* Sørger for, at animationen ikke rykkes */
+}
+
+/* Lottie-animationen inde i containeren */
+.lottie-tema dotlottie-player {
+  width: 100%; /* Gør animationen responsiv */
+  height: 100%; /* Gør animationen responsiv */
+}
+
+@media (max-width: 1200px) {
+  .lottie-section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .lottie-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Mindre afstand mellem elementer */
+    padding: 10px; /* Reducér padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .lottie-section {
+    grid-template-columns: 1fr; /* Én kolonne */
+    gap: 10px; /* Mindre afstand */
+  }
+}
+
+/*----------------------------TEMAER----------------------------*/
+
+/* Container til billeder */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Fylder hele skærmens højde */
+  background: none; /* Ingen baggrund uden for rammen */
+}
+
+/* Formørket ramme omkring billederne */
+.trefotos {
+  display: flex; /* Placer billederne på en række */
+  gap: 1em; /* Mellemrum mellem billeder */
+  padding: 2em; /* Afstand mellem billeder og ramme */
+  background-color: rgba(0, 0, 0, 0.5); /* Formørket baggrund omkring billeder */
+  border-radius: 10px; /* Afrundede hjørner */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Let skygge for dybde */
+}
+
+/* Individuelle billeder */
+.foto {
+  width: 400px; /* Fast bredde for billederne */
+  height: 220px; /* Fast højde for billederne */
+  object-fit: cover; /* Sørger for, at billedet fylder rammen uden forvrængning */
+  border-radius: 5px; /* Små afrundede hjørner på billeder */
+}
+
+.cv {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .trefotos {
+    flex-direction: column; /* Skifter layout til lodret */
+    align-items: center; /* Centrerer indholdet */
+    gap: 1em; /* Beholder afstand mellem billederne */
+  }
+
+  .foto {
+    width: 90%; /* Tilpas bredden til at fylde det meste af skærmen */
+    height: auto; /* Bevarer proportionerne */
+    width: 400px; /* Fast bredde for billederne */
+    height: 220px; /* Fast højde for billederne */
+  }
+}
