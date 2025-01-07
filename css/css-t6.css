@@ -118,7 +118,7 @@ header.scrolled {
   left: 5vw;
   font-size: clamp(2rem, 20vw, 10rem);
   width: auto; /* Sørg for, at teksten ikke tager unødvendig bredde */
-  color: white;
+  color: rgb(219, 172, 2);
 }
 
 .lottie-section {
@@ -256,6 +256,7 @@ header.scrolled {
 .cv {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+  font-size: 0.5em;
 }
 
 .cv img {
@@ -308,5 +309,100 @@ header.scrolled {
     top: 3em; /* Further adjust vertical position */
     font-size: 2rem; /* Further reduce font size */
     padding: 0.3em 0.6em; /* Reduce padding for better fit */
+  }
+}
+
+/* Scale down specific elements and font sizes */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+h1 {
+  font-size: 40px; /* Reduced by 20% from 50px */
+}
+
+#header {
+  height: 4vh; /* Reduced by 20% from 5vh */
+  padding: 0 0.8rem; /* Reduced by 20% */
+}
+
+.logo {
+  width: 80px; /* Reduced by 20% from 100px */
+  height: auto;
+  margin: 0.8em; /* Reduced by 20% */
+}
+
+.header_nav ul li {
+  font-size: clamp(0.8rem, 1.6vw, 2.4rem); /* Reduced by 20% */
+  margin-left: 4vw; /* Reduced by 20% */
+}
+
+.header_nav ul li a {
+  font-size: clamp(0.8rem, 1.6vw, 2.4rem); /* Reduced by 20% */
+}
+
+.headline h1 {
+  font-size: clamp(1.6rem, 16vw, 8rem); /* Reduced by 20% */
+  top: 11.2vh; /* Reduced by 20% from 14vh */
+  left: 4vw; /* Reduced by 20% from 5vw */
+}
+
+.lottie-section {
+  gap: 40px; /* Reduced by 20% from 50px */
+  padding: 16px; /* Reduced by 20% from 20px */
+  top: 24vh; /* Reduced by 20% from 30vh */
+}
+
+.lottie-tema {
+  width: 176px; /* Reduced by 20% from 220px */
+  height: 120px; /* Reduced by 20% from 150px */
+  padding: 8px; /* Reduced by 20% from 10px */
+}
+
+.foto {
+  width: 320px; /* Reduced by 20% from 400px */
+  height: 176px; /* Reduced by 20% from 220px */
+}
+
+.video-container,
+.video {
+  width: 320px; /* Reduced by 20% from 400px */
+  height: 176px; /* Reduced by 20% from 220px */
+}
+
+.tematext {
+  font-size: 2.4rem; /* Reduced by 20% from 3rem */
+  top: 4em; /* Reduced by 20% */
+  padding: 0.4em 0.8em; /* Adjusted padding */
+}
+
+.cv img {
+  width: 160px; /* Reduced by 20% from 200px */
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 64px; /* Reduced by 20% from 80px */
+  }
+
+  .lottie-section {
+    gap: 12px; /* Reduced by 20% from 15px */
+    padding: 8px; /* Reduced by 20% */
+  }
+
+  .tematext {
+    font-size: 1.6rem; /* Reduced by 20% from 2rem */
+    padding: 0.32em 0.64em; /* Adjusted padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .tematext {
+    font-size: 1.6rem; /* Reduced by 20% from 2rem */
+    padding: 0.24em 0.48em; /* Adjusted padding */
   }
 }
