@@ -92,7 +92,7 @@ header.scrolled {
 .header_nav ul li {
   text-decoration: none; /* Fjerner understregning */
   color: white; /* Hvid tekst */
-  font-size: clamp(1rem, 2vw, 3rem) !important;
+  font-size: clamp(0.8rem, 2vw, 3rem) !important;
   margin: 0 1rem; /* Laver mellemrum mellem menupunkterne */
   margin-left: 5vw;
 }
@@ -100,13 +100,30 @@ header.scrolled {
 .header_nav ul li a {
   text-decoration: none; /* Fjerner understregning */
   color: white; /* Hvid tekst */
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(0.8rem, 2vw, 3rem);
+}
+
+@media (max-width: 768px) {
+  .header_nav ul li a h1 {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 515px) {
+  .header_nav ul li a h1 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @media (max-width: 768px) {
   .logo {
     max-width: 80px; /* Mindre logo på små skærme */
-    padding: 1em;
+    padding: 0em;
+    margin: 0em;
   }
 }
 
@@ -302,9 +319,10 @@ header.scrolled {
 }
 @media (max-width: 768px) {
   .tematext {
-    top: 3em; /* Adjust the vertical position for smaller screens */
-    font-size: 2rem; /* Slightly reduce font size */
-    padding: 0.4em 0.8em; /* Adjust padding for better fit */
+    top: 3em;
+    font-size: 2rem;
+    padding: 0.4em 0.8em;
+    margin-top: -30px;
   }
 }
 
@@ -339,12 +357,12 @@ h1 {
 }
 
 .header_nav ul li {
-  font-size: clamp(0.8rem, 1.6vw, 2.4rem); /* Reduced by 20% */
+  font-size: clamp(0.6rem, 1.6vw, 2.4rem); /* Reduced by 20% */
   margin-left: 4vw; /* Reduced by 20% */
 }
 
 .header_nav ul li a {
-  font-size: clamp(0.8rem, 1.6vw, 2.4rem); /* Reduced by 20% */
+  font-size: clamp(0.6rem, 1.6vw, 2.4rem); /* Reduced by 20% */
 }
 
 .headline h1 {
