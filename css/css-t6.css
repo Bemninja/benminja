@@ -27,6 +27,12 @@ h1 {
   background-image: url(../img/rearing-pukah.webp);
 }
 
+@media (max-width: 768px) {
+  .baggrund1 {
+    background-position: 80% top;
+  }
+}
+
 html,
 body {
   height: 100%;
