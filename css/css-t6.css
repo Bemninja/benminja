@@ -256,7 +256,11 @@ header.scrolled {
 .cv {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  font-size: 0.5em;
+}
+
+.cv p {
+  font-size: 0.8rem; /* Adjust to your preferred size */
+  line-height: 1.2; /* Ensure proper spacing between lines */
 }
 
 .cv img {
