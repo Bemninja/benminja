@@ -25,7 +25,6 @@ h1 {
   height: 100vh;
   width: 100vw;
   background-image: url(../img/rearing-pukah.webp);
-  z-index: -1;
 }
 
 html,
@@ -212,6 +211,12 @@ header.scrolled {
   align-items: center;
   height: 100vh; /* Fylder hele skærmens højde */
   background: none; /* Ingen baggrund uden for rammen */
+  position: relative;
+}
+
+.overlay,
+.trefotos {
+  pointer-events: auto; /* Sørger for, at klikbare elementer kan reagere på klik */
 }
 
 /* Formørket ramme omkring billederne */
@@ -224,17 +229,38 @@ header.scrolled {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Let skygge for dybde */
 }
 
-/* Individuelle billeder */
+.video-container {
+  position: relative;
+  width: 400px;
+  height: 220px;
+}
+
 .foto {
-  width: 400px; /* Fast bredde for billederne */
-  height: 220px; /* Fast højde for billederne */
-  object-fit: cover; /* Sørger for, at billedet fylder rammen uden forvrængning */
-  border-radius: 5px; /* Små afrundede hjørner på billeder */
+  width: 400px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 220px;
+  display: none; /* Hide the video initially */
+  border-radius: 5px;
 }
 
 .cv {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+}
+
+.cv img {
+  width: 200px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -249,5 +275,38 @@ header.scrolled {
     height: auto; /* Bevarer proportionerne */
     width: 400px; /* Fast bredde for billederne */
     height: 220px; /* Fast højde for billederne */
+  }
+}
+.overlay {
+  position: relative; /* Ensures child elements are positioned relative to this container */
+}
+
+.tematext {
+  position: absolute; /* Allows precise positioning over .trefotos */
+  top: 5em; /* Adjust the vertical position */
+  left: 50%; /* Horizontally centers the text */
+  transform: translateX(-50%); /* Adjust for the left offset */
+  font-size: 2rem; /* Customize the text size */
+  color: white; /* Set the text color */
+  text-align: center; /* Center-align the text */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for readability */
+  padding: 0.5em 1em; /* Add padding around the text */
+  border-radius: 10px; /* Optional: Rounded corners */
+  z-index: 1; /* Ensure it stays above other elements */
+  font-size: 3rem;
+}
+@media (max-width: 768px) {
+  .tematext {
+    top: 3em; /* Adjust the vertical position for smaller screens */
+    font-size: 2rem; /* Slightly reduce font size */
+    padding: 0.4em 0.8em; /* Adjust padding for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .tematext {
+    top: 3em; /* Further adjust vertical position */
+    font-size: 2rem; /* Further reduce font size */
+    padding: 0.3em 0.6em; /* Reduce padding for better fit */
   }
 }
