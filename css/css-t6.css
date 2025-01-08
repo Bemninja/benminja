@@ -100,7 +100,7 @@ header.scrolled {
   color: white;
   font-size: clamp(0.8rem, 2vw, 3rem) !important;
   margin: 0 1rem;
-  margin-left: 5vw;
+  margin-left: 0vw;
 }
 
 .header_nav ul li a {
@@ -356,8 +356,8 @@ h1 {
 }
 
 .header_nav ul li {
-  font-size: clamp(0.6rem, 1.6vw, 2.4rem); /* Reduced by 20% */
-  margin-left: 4vw; /* Reduced by 20% */
+  font-size: clamp(0.6rem, 1.6vw, 2rem); /* Reduced by 20% */
+  margin-left: 0vw; /* Reduced by 20% */
 }
 
 .header_nav ul li a {
